@@ -2,14 +2,14 @@
 import * as React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./router";
-import Container from '@mui/material/Container';
+import DefaultLayout from "./layout/DefaultLayout";
 
 export default function App() {
   return (
       <BrowserRouter>
-         <Container>
+         <DefaultLayout>
           <Router />
-        </Container>
+        </DefaultLayout>
       </BrowserRouter>
    );
 }
