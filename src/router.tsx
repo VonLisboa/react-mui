@@ -19,7 +19,7 @@ const Router = () => {
   // object-based routes
   return useRoutes([
     { path: "/", element: <Home /> },
-    { path: "games", element: <Painel /> },
+    { path: "painel", element: <Painel /> },
     { path: "*", element: <NotFound /> },
   ]);
 };
