@@ -27,7 +27,7 @@ export default function Navbar() {
         color="primary"
         sx={{ borderTop: "3px solid #2b4ee9" }}
       >
-        <Toolbar sx={{gap: 2}}>
+        <Toolbar sx={{ gap: 2 }}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Painel de Recebimento / Local: Centro de distribuição / Dia:
             22/10/2023
