@@ -24,7 +24,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 const StyledTableRow = styled(TableRow)(({ theme }) => ({}));
 
 const getColor = (color: string) => {
-    switch (color) {
+  switch (color) {
     case "yellow":
       return "#ffee00";
     case "green":
@@ -52,23 +52,27 @@ export default function TTable(props: any) {
       <Table>
         <TableHead>
           <TableRow>
-            {props?.fields.map((item: string) => (
-              <StyledTableCell key={item} align="center">
-                {item}
+            {props?.fields.map((item: any, i: number) => (
+              <StyledTableCell key={i} align="center">
+                {item.label}
               </StyledTableCell>
             ))}
           </TableRow>
         </TableHead>
         <TableBody>
-          {props?.rows.map((row: any) => (
-            <StyledTableRow key={row.name.value}>
-              {props?.fields.map((item: string) => (
+          {props?.rows.map((row: any, i: number) => (
+            <StyledTableRow key={i}>
+              {props?.fields.map((item: any, j: number) => (
                 <StyledTableCell
-                  key={item}
+                  key={j}
                   align="center"
-                  sx={{ backgroundColor: getColor(extract(row,  `${item}.color`)) }}
+                  sx={{
+                    backgroundColor: getColor(
+                      extract(row, `${item.value}.color`)
+                    ),
+                  }}
                 >
-                  {extract(row, `${item}.value`)}
+                  {extract(row, `${item.value}.value`)}
                 </StyledTableCell>
               ))}
             </StyledTableRow>
